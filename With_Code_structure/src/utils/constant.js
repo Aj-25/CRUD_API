@@ -1,0 +1,15 @@
+const REMINDER_TYPES = {
+  SMS: 1,
+  EMAIL: 2,
+  WHATSAPP: 3
+};
+
+const RESPONSE_STATUS = {
+  SUCCESS: 'SUCCESS',
+  FAILED: 'FAILED'
+};
+
+module.exports = {
+  REMINDER_TYPES,
+  RESPONSE_STATUS
+};

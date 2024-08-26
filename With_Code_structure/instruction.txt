@@ -1,0 +1,96 @@
+Command to create the database and table
+
+1.
+create database reminder_db;
+2.
+use reminder_db;
+3.
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  phoneNumber VARCHAR(20) NOT NULL UNIQUE,
+  credits INT DEFAULT 100 NOT NULL,
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+4.
+INSERT INTO `reminder_db`.`users` (`id`, `email`, `phoneNumber`) VALUES ('1', 'test1@gmail.com', '1111111111');
+INSERT INTO `reminder_db`.`users` (`id`, `email`, `phoneNumber`) VALUES ('2', 'test2@gmail.com', '2222222222');
+INSERT INTO `reminder_db`.`users` (`id`, `email`, `phoneNumber`) VALUES ('3', 'test3@gmail.com', '3333333333');
+INSERT INTO `reminder_db`.`users` (`id`, `email`, `phoneNumber`) VALUES ('4', 'test4@gmail.com', '4444444444');
+INSERT INTO `reminder_db`.`users` (`id`, `email`, `phoneNumber`) VALUES ('5', 'test5@gmail.com', '5555555555');
+INSERT INTO `reminder_db`.`users` (`id`, `email`, `phoneNumber`) VALUES ('6', 'test6@gmail.com', '6666666666');
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+To Run command 
+
+Process to run the API 
+
+1. Open VScode editor 
+2. Open the folder I shared 
+3. Once folder is open and add your db crendential is .env file that is
+
+                                         =>  DB_HOST=localhost
+                                         =>  DB_USER=root
+                                         =>  DB_PASSWORD= "your Password with qoutes"
+                                         =>  DB_PORT=3306
+                                         =>  DB_DIALECT=mysql
+
+4. Open terminal in VScode by pressing Ctrl + `
+5. In terminal run command -
+                            => first -- npm i 
+
+                            => second -- npm run dev  
+                            
+
+
+
+6. Open postman or any other API testing tool
+
+For checking the GET API 
+
+1. In postman create a new request by selecting HTTP method as GET
+2. Pass the url - http://localhost:3000/api/reminder/credits/userId
+3. Click send button to send the request
+Expected Output :- 
+{
+    "statusCode": 200,
+    "customMessage": "Remaining credits retrieved successfully.",
+    "type": "CREDITS_RETRIEVED",
+    "credits": 68
+}
+
+
+
+
+For checking the post api 
+1. In postman create a new request by selecting HTTP method as POST 
+2. Pass the url - http://localhost:3000/api/reminder/send
+3. In the request body - select raw and select JSON
+4. Pass this JSON in blank area
+reminderType = SMS,Email and Whatsapp
+userId = 1,2
+
+{
+  "userId": 1,
+  "type": "SMS"
+}
+
+5.Click send button to send the request
+Expected Output:
+{
+    "statusCode": 200,
+    "customMessage": "Reminder sent successfully.",
+    "type": "REMINDER_SENT"
+}
+
+
+
+
+
+
+
+
+
