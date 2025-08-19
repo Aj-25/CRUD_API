@@ -1,0 +1,155 @@
+
+For Sign in 
+Method :- POST
+Url :- http://localhost:3000/api/auth/register
+Format -Body/RAW - JSON
+Json format - 
+
+{
+  "name": "testuser",
+  "email": "test@example.com",
+  "password": "password123"
+}
+
+----------------------------------------------------------------------------------------
+
+
+For Log in 
+
+Method :- POST
+url :- http://localhost:3000/api/auth/login
+Format -Body/RAW - JSON
+Json format - 
+
+{
+  "email": "test@example.com",
+  "password": "password123"
+}
+
+** Note :- Copy Bearer Token generated on login 
+
+----------------------------------------------------------------------------------------
+
+For Logout
+
+Method: POST
+URL: http://localhost:3000/api/auth/logout
+
+Headers:Authorization: Bearer <your_token> (Past the token generated on the time of Login)
+
+----------------------------------------------------------------------------------------
+
+For Creating To-DO List (Protected by Bearer Token)
+
+Method :- POST
+Url :- http://localhost:3000/api/todos
+
+Headers: Authorization: Bearer <your_token> (Past the token generated on the time of Login)
+Format -Body/RAW - JSON
+Json format - 
+
+1.
+
+{
+  "title": "Project - todo list",
+  "description": "Creating todo list Project with Nodejs, Express,MySQL ",
+  "status": "incomplete"
+}
+
+2.
+
+{
+  "title": "Project Feature",
+  "description": "Implement validation, Middleware, authorization and authentication ",
+  "status": "incomplete"
+}
+
+
+-------------------------------------------------------------------------------------------------------
+
+For Getting all To-DO List (Protected by Bearer Token)
+
+
+Method :- GET
+Url :- http://localhost:3000/api/todos
+
+Headers: Authorization: Bearer <your_token> (Past the token generated on the time of Login)
+
+
+-------------------------------------------------------------------------------------------------------
+
+For Getting  To-DO List by ID (Protected by Bearer Token)
+
+
+Method :- GET
+Url :- http://localhost:3000/api/todos/1
+
+Headers: Authorization: Bearer <your_token> (Past the token generated on the time of Login)
+
+
+
+-------------------------------------------------------------------------------------------------------
+
+
+For Updating value of To-Do list by id  (Protected by Bearer Token)
+
+
+Method :- PUT
+Url :- http://localhost:3000/api/todos/1
+
+Headers: Authorization: Bearer <your_token> (Past the token generated on the time of Login)
+
+{
+  "title": "Project - todo list",
+  "description": "Creating todo list Project with Nodejs, Express,MySQL ",
+  "status": "completed"
+}
+
+
+-------------------------------------------------------------------------------------------------------
+
+For Deleting To-Do list by id  (Protected by Bearer Token)
+
+
+Method :- DELETE
+Url :- http://localhost:3000/api/todos/1
+
+Headers: Authorization: Bearer <your_token> (Past the token generated on the time of Login)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
